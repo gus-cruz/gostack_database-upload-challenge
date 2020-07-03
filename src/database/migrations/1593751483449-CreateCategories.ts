@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable prettier/prettier */
+/* eslint-disable import/prefer-default-export */
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class CreateCategories1593751483449 implements MigrationInterface {

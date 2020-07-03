@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable prettier/prettier */
+/* eslint-disable import/prefer-default-export */
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class CreateTransactions1593750934363 implements MigrationInterface {
@@ -25,7 +25,7 @@ export class CreateTransactions1593750934363 implements MigrationInterface {
                     },
                     {
                         name: 'category_id',
-                        type: 'varchar'
+                        type: 'uuid'
                     },
                     {
                         name: 'created_at',
