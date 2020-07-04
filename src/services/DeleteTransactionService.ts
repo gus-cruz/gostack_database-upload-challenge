@@ -1,20 +1,19 @@
 /* eslint-disable prettier/prettier */
-import { getRepository } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 import AppError from '../errors/AppError';
-
-import Transaction from '../models/Transaction'
+import TransactionsRepository from '../repositories/TransactionsRepository';
 
 class DeleteTransactionService {
-  public async execute(transaction_id: string): Promise<void> {
-    const transactionRepository = getRepository(Transaction);
+  public async execute(id: string): Promise<void> {
+    const transactionsRepository = getCustomRepository(TransactionsRepository);
     
-    const transaction = await transactionRepository.findOne(transaction_id);
+    const transaction = await transactionsRepository.findOne({ where: {id}});
 
     if (!transaction) {
       throw new AppError('None transaction has found.', 401);
     }
 
-     transactionRepository.delete(transaction);
+     await transactionsRepository.delete({id});
   }
 }
 

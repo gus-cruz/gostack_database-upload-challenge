@@ -20,6 +20,10 @@ export class CreateTransactions1593750934363 implements MigrationInterface {
                         type: 'varchar',
                     },
                     {
+                        name: 'type',
+                        type: 'varchar',
+                    },
+                    {
                         name: 'value',
                         type: 'float'
                     },

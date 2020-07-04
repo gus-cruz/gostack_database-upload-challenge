@@ -1,5 +1,4 @@
-import 'reflect-metadata';
-
+/* eslint-disable prettier/prettier */
 
 import app from './app';
 
